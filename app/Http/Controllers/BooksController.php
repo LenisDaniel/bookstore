@@ -13,10 +13,8 @@ class BooksController extends Controller
 
     public function index()
     {
-
         $data = DB::table('books')->join('users', 'users.id' , '=', 'books.user_id')->select('books.*', 'users.name')->where('books.approved', 0)->get();
         return view('unapproved', ['data' => json_encode($data)]);
-
     }
 
 
@@ -47,11 +45,6 @@ class BooksController extends Controller
     public function show($id)
     {
         $data = DB::table('books')->join('users', 'users.id' , '=', 'books.user_id')->select('books.*', 'users.name', 'users.paypal_email')->where('books.id', $id)->get();
-        //echo "</pre>";
-        //print_r($data);
-        //echo "</pre>";
-        //exit;
-        //$seller_email = DB::table('users')->select('paypal_email')->where('id', $test)->get();
         return view('bookdetails', ['data' => $data]);
     }
 

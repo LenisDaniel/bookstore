@@ -68,8 +68,6 @@ class SellController extends Controller
             }
         }
 
-
-
         $books = new Book();
         $books->book_name = $request->book_name;
         $books->user_id = Auth::id();
@@ -89,18 +87,15 @@ class SellController extends Controller
 
     }
 
-
     public function show($id)
     {
         //
     }
 
-
     public function edit($id)
     {
         //
     }
-
 
     public function update(Request $request, $id)
     {
@@ -112,4 +107,5 @@ class SellController extends Controller
     {
         //
     }
+
 }

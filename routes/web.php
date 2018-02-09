@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Payment;
 use App\User;
+use App\Book;
+use App\Mail\SaleAdmin;
+use App\Mail\SaleClient;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -55,11 +58,22 @@ Route::get('/success', function(Request $request){
         $payment->save();
 
         $user = User::where('id', $user_id)->get();
+        $book_name = Book::where('id', '=', $item_number)->select('book_name')->get();
+        Mail::to($user[0]->email)->send(new SaleClient($user[0]->name, $book_name[0]->book_name, $txn_id));
+//        Mail::send('emails.sale', ['user' => $user], function ($m) use ($user) {
+//            $m->from('info@tbs.com', 'The Book Store');
+//            $m->to($user[0]->email, $user[0]->name)->subject('Your Purchase has been completed!');
+//        });
 
-        Mail::send('emails.sale', ['user' => $user], function ($m) use ($user) {
-            $m->from('info@tbs.com', 'The Book Store');
-            $m->to($user[0]->email, $user[0]->name)->subject('Your Purchase has been completed!');
-        });
+        $admin_emails = User::where('is_admin', '=', 1)->select('email')->get();
+        for($i = 0; $i < count($admin_emails); $i++){
+            Mail::to($admin_emails[$i]->email)->send(new SaleAdmin($user[0]->name, $book_name[0]->book_name, $txn_id, $user[0]->email, $user[0]->phone));
+        }
+
+//        Mail::send('emails.sale_admin', ['admin_emails' => $admin_emails], function ($m) use ($admin_emails) {
+//            $m->from('info@tbs.com', 'The Book Store');
+//            $m->to($admin_emails[0]->email)->subject('Your Purchase has been completed!');
+//        });
 
         $request->session()->flash('alert-success', 'The purchase of the book has been successfully completed');
         return view('home');
