@@ -50,11 +50,9 @@
                             <h6 class="title-price"><small>Offer Price</small></h6>
                             <h3 style="margin-top:0px;">US $ {{$data[0]->price}}</h3>
 
-
-
                             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                             <!-- Aqui van los campos de paypal por si el cliente va a pagar el servicio -->
-                            <input type="hidden" name="business" value="lenis.daniel-facilitator@outlook.com">
+                            <input type="hidden" name="business" value="{{$data[0]->paypal_email}}">
                             <input type="hidden" name="cmd" value="_xclick">
                             <input type="hidden" name="item_name" value="Product Name: {{$data[0]->book_name}}">
                             <input type="hidden" name="item_number" id="item_number" value="{{$data[0]->id}}">

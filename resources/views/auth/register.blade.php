@@ -38,17 +38,10 @@
                                 @endif
                             </div>
                         </div>
-
-
-
-
-
                         <div class="form-group{{ $errors->has('paypal_email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">PayPal E-Mail Address</label>
-
                             <div class="col-md-6">
-                                <input id="paypal_email" type="email" class="form-control" name="paypal_email" value="{{ old('paypal_email') }}" required>
-
+                                <input id="paypal_email" type="email" class="form-control" name="paypal_email" value="{{ old('paypal_email') }}" placeholder="Where you will receive payments">
                                 @if ($errors->has('paypal_email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('paypal_email') }}</strong>
@@ -69,14 +62,6 @@
                                 @endif
                             </div>
                         </div>
-
-
-
-
-
-
-
-
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Books Categories</div>
+                    <div class="panel-heading">Book Categories</div>
 
                     <div class="panel-body">
                         <div class="flash-message">
@@ -21,139 +21,11 @@
                                 <div>
                                     {{--<img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>--}}
                                     <h1 class="heading">
-                                        Books Categories
+                                        Book Categories
                                     </h1>
                                 </div>
                                 <div class="content">
                                     <div class="container">
-                                        {{--<div class="row">--}}
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="/category/bedroom"> Ingles--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-                                        {{--<p class="">--}}
-                                        {{--Material Design is a visual programming language made by Google. Language programming...--}}
-                                        {{--</p>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="/category/bedroom" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="#"> Matematicas--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="#" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="#"> Admi--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="#" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="#"> Biologia--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="#" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="#"> Electronica--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="#" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-xs-4 col-sm-4">--}}
-                                        {{--<div class="card">--}}
-                                        {{--<a class="img-card" href="#">--}}
-                                        {{--<img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />--}}
-                                        {{--</a>--}}
-                                        {{--<div class="card-content">--}}
-                                        {{--<h4 class="card-title">--}}
-                                        {{--<a href="#"> Edfi--}}
-                                        {{--</a>--}}
-                                        {{--</h4>--}}
-
-                                        {{--</div>--}}
-                                        {{--<div class="card-read-more">--}}
-                                        {{--<a href="#" class="btn btn-link btn-block">--}}
-                                        {{--Ver Libros--}}
-                                        {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
 
                                         <div class="row">
                                             <div class="col-sm-4">

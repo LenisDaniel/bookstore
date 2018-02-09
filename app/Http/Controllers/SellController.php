@@ -47,6 +47,11 @@ class SellController extends Controller
         $file_size = $_FILES['picture']['size'];
         $path= public_path('/images/');
 
+        if(Auth::user()->paypal_email == "" || Auth::user()->phone == ""){
+            $request->session()->flash('alert-danger', 'You must have a phone number and PayPal email to register books. Please edit your account');
+            return redirect('/home');
+        }
+
         if(!(strpos($file_ext, "png") || strpos($file_ext, "jpeg") ))
         {
             //echo "La extensión o el tamaño de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .png o .jpg<br><li>Se permiten archivos de 300 Kb máximo.</td></tr></table>";
@@ -62,6 +67,8 @@ class SellController extends Controller
                 //echo "Ocurrió algún error al subir el fichero. No pudo guardarse.";
             }
         }
+
+
 
         $books = new Book();
         $books->book_name = $request->book_name;

@@ -46,7 +46,12 @@ class BooksController extends Controller
 
     public function show($id)
     {
-        $data = DB::table('books')->join('users', 'users.id' , '=', 'books.user_id')->select('books.*', 'users.name')->where('books.id', $id)->get();
+        $data = DB::table('books')->join('users', 'users.id' , '=', 'books.user_id')->select('books.*', 'users.name', 'users.paypal_email')->where('books.id', $id)->get();
+        //echo "</pre>";
+        //print_r($data);
+        //echo "</pre>";
+        //exit;
+        //$seller_email = DB::table('users')->select('paypal_email')->where('id', $test)->get();
         return view('bookdetails', ['data' => $data]);
     }
 
