@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $category_name }} <a href="{{ route('home') }}"><button class="btn btn-primary pull-right" style="margin-top: -7px">Go to Categories</button></a>
+                        Unapproved Books <a href="{{ route('home') }}"><button class="btn btn-primary pull-right" style="margin-top: -7px">Go to Categories</button></a>
                     </div>
 
                     <div class="panel-body">
@@ -16,7 +16,7 @@
                             </div>
                         @endif
 
-                        <table data-toggle="table" id="book_list" data-search="true" data-pagination="true" data-sort-order="desc">
+                        <table data-toggle="table" id="unapproved_list" data-search="true" data-pagination="true" data-sort-order="desc">
                             <thead>
                             <tr>
                                 <th data-field="id" data-sortable="true" >Book ID</th>
@@ -42,24 +42,13 @@
         $(document).ready(function(){
 
             response = {!! $data !!};
+            var $table = $('#unapproved_list');
 
-            $('#book_list').bootstrapTable({
+            $table.bootstrapTable({
                 data: response,
 
             });
 
-            // $('#remove').click(function(){
-            //     var ids = $.map($('#book_list').bootstrapTable('getSelections'), function (row) {
-            //         return row.id;
-            //     });
-            //
-            //     $('#book_list').bootstrapTable('remove', {
-            //         field: 'id',
-            //         values: ids
-            //     });
-            // })
-
-            var $table = $('#book_list');
             $(function () {
                 $table.on('click-row.bs.table', function (e, row, $element) {
                     book_id = row.id;
@@ -70,7 +59,6 @@
 
                 });
             });
-
 
         });
     </script>

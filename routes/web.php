@@ -27,8 +27,9 @@ Route::get('/sell', 'SellController@index')->name('sell');
 Route::get('/account', 'AccountController@index')->name('account');
 
 Route::get('booklist/{id}', 'CategoriesController@index')->name('categories');
-Route::get('bookdetails/{id}', 'BooksController@index')->name('bookdetails');
-Route::get('approvebook', 'BooksController@show')->name('approvebook');
+Route::get('bookdetails/{id}', 'BooksController@show')->name('bookdetails');
+Route::get('unapproved', 'BooksController@index')->name('unapproved');
+Route::post('approve_process', 'BooksController@is_approved')->name('approve_process');
 
 Route::get('/success', function(Request $request){
 

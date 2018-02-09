@@ -42,7 +42,7 @@
                             <li><a href="{{ route('sell') }}">Sell a Book</a></li>
                             <li><a href="{{ route('account') }}">My Account</a></li>
                                 @if(Auth::user()->is_admin == 1)
-                                <li><a href="{{ route('approvebook') }}">Approve Books</a></li>
+                                <li><a href="{{ route('unapproved') }}">Unapproved Books</a></li>
                                 @endif
                          @endif
                     </ul>
