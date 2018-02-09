@@ -39,6 +39,44 @@
                             </div>
                         </div>
 
+
+
+
+
+                        <div class="form-group{{ $errors->has('paypal_email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">PayPal E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="paypal_email" type="email" class="form-control" name="paypal_email" value="{{ old('paypal_email') }}" required>
+
+                                @if ($errors->has('paypal_email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('paypal_email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Contact Phone</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
+
+                                @if ($errors->has('phone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

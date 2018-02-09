@@ -30,6 +30,7 @@ Route::get('booklist/{id}', 'CategoriesController@index')->name('categories');
 Route::get('bookdetails/{id}', 'BooksController@show')->name('bookdetails');
 Route::get('unapproved', 'BooksController@index')->name('unapproved');
 Route::post('approve_process', 'BooksController@is_approved')->name('approve_process');
+Route::post('register_book', 'SellController@store')->name('register_book');
 
 Route::get('/success', function(Request $request){
 
