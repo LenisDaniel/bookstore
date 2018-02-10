@@ -83,16 +83,22 @@ class SellController extends Controller
         $books->conditions = $request->conditions;
         $books->price = $request->price;
         $books->_token = $request->_token;
+        if(Auth::user()->is_admin == 1){
+            $books->approved = 1;
+        }
         $books->save();
 
-        $user = User::where('id', Auth::id())->get();
-        $admin_emails = User::where('is_admin', '=', 1)->select('email')->get();
+        if(Auth::user()->is_admin <> 1){
+            $user = User::where('id', Auth::id())->get();
+            $admin_emails = User::where('is_admin', '=', 1)->select('email')->get();
 
-        for($i = 0; $i < count($admin_emails); $i++){
-            Mail::to($admin_emails[$i]->email)->send(new BookRegister($user[0]->name, $request->book_name, $user[0]->email, $user[0]->phone));
+            for($i = 0; $i < count($admin_emails); $i++){
+                Mail::to($admin_emails[$i]->email)->send(new BookRegister($user[0]->name, $request->book_name, $user[0]->email, $user[0]->phone));
+            }
+            $request->session()->flash('alert-success', 'Book Register Succesfully, awaiting for approval');
+        }else{
+            $request->session()->flash('alert-success', 'Book Register Succesfully');
         }
-
-        $request->session()->flash('alert-success', 'Book Register Succesfully, awaiting for approval');
         return redirect('/home');
 
     }

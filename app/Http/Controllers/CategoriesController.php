@@ -19,7 +19,6 @@ class CategoriesController extends Controller
             $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.id')->where('books.category_id', $id)->where('books.user_id', '<>', Auth::id())->where('books.approved', 1)->get();
         }
 
-
         if(!$data->isEmpty()){
             return view('booklist', ['data' => json_encode($data), 'category_name' => $data[0]->category_descr]);
         }else{

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<link href="{{ asset('css/products.css') }}" rel="stylesheet">
+{{--<link href="{{ asset('css/products.css') }}" rel="stylesheet">--}}
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 @section('content')
@@ -73,15 +73,30 @@
                         </div>
 
                         <div class="col-xs-9">
-                            <ul class="menu-items">
-                                <li class="active">Product Details</li>
-                            </ul>
-                            <div style="width:100%;border-top:1px solid silver">
-                                <p style="padding:15px;">
-                                    <small>
-                                        {{$data[0]->descr}}
-                                    </small>
-                                </p>
+                            {{--<ul class="menu-items">--}}
+                                {{--<li class="active">Product Details</li>--}}
+                            {{--</ul>--}}
+                            {{--<div style="width:100%;border-top:1px solid silver">--}}
+                                {{--<p style="padding:15px;">--}}
+                                    {{--<small>--}}
+                                        {{--{{$data[0]->descr}}--}}
+                                    {{--</small>--}}
+                                {{--</p>--}}
+                            {{--</div>--}}
+                            <br/>
+                            <div>
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Product Details</a></li>
+
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home" style="margin-left: 5px; margin-top: 10px">{{$data[0]->descr}}</div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -17,9 +17,17 @@ class AccountController extends Controller
     public function index()
     {
         $user = User::find(Auth::id())->get();
-        $payment = Payment::find(Auth::id());
-        $published_books = DB::table('books')->select('id', 'book_name')->where('user_id', Auth::id())->get();
-        $purchased_books = DB::table('payments')->join('books', 'payments.book_id' , '=', 'books.id')->select('books.*', 'payments.id')->where('payments.user_id', Auth::id())->get();
+        if(Auth::user()->is_admin == 1){
+            $payment = Payment::find(Auth::id());
+            $published_books = DB::table('books')->select('id', 'book_name')->get();
+            $purchased_books = DB::table('payments')->join('books', 'payments.book_id' , '=', 'books.id')->select('books.*', 'payments.id')->get();
+
+        }else{
+            $payment = Payment::find(Auth::id());
+            $published_books = DB::table('books')->select('id', 'book_name')->where('user_id', Auth::id())->get();
+            $purchased_books = DB::table('payments')->join('books', 'payments.book_id' , '=', 'books.id')->select('books.*', 'payments.id')->where('payments.user_id', Auth::id())->get();
+
+        }
 
         return view("/myaccount", ['user' => $user, 'published_books' => json_encode($published_books), 'purchased_books' => json_encode($purchased_books)]);
     }

@@ -20,6 +20,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => 'admin@admin.com',
         'paypal_email' => 'admin@admin.com',
         'phone' => '787-777-7777',
+        'is_admin' => 1,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
