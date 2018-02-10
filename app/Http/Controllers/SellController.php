@@ -92,7 +92,7 @@ class SellController extends Controller
             Mail::to($admin_emails[$i]->email)->send(new BookRegister($user[0]->name, $request->book_name, $user[0]->email, $user[0]->phone));
         }
 
-        $request->session()->flash('alert-success', 'Book Register Succesfully');
+        $request->session()->flash('alert-success', 'Book Register Succesfully, awaiting for approval');
         return redirect('/home');
 
     }
