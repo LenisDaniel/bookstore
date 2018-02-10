@@ -86,8 +86,7 @@ class SellController extends Controller
 
         $user = User::where('id', Auth::id())->get();
         $admin_emails = User::where('is_admin', '=', 1)->select('email')->get();
-        print_r($admin_emails);
-        exit;
+        
         for($i = 0; $i < count($admin_emails); $i++){
             Mail::to($admin_emails[$i]->email)->send(new BookRegister($user[0]->name, $request->book_name, $user[0]->email, $user[0]->phone));
         }
