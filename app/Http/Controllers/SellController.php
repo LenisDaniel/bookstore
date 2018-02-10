@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Book;
+use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\BookRegister;
 
 
 class SellController extends Controller
@@ -81,6 +83,14 @@ class SellController extends Controller
         $books->price = $request->price;
         $books->_token = $request->_token;
         $books->save();
+
+        $user = User::where('id', Auth::id())->get();
+        $admin_emails = User::where('is_admin', '=', 1)->select('email')->get();
+        print_r($admin_emails);
+        exit;
+        for($i = 0; $i < count($admin_emails); $i++){
+            Mail::to($admin_emails[$i]->email)->send(new BookRegister($user[0]->name, $request->book_name, $user[0]->email, $user[0]->phone));
+        }
 
         $request->session()->flash('alert-success', 'Book Register Succesfully');
         return redirect('/home');

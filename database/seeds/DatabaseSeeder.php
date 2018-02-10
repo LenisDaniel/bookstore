@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Category;
 
+
+
 class DatabaseSeeder extends Seeder
 {
     /**
