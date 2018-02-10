@@ -16,7 +16,7 @@ class BookRegister extends Mailable
     public $client_email;
     public $client_phone;
 
-    public function __construct()
+    public function __construct($client_name = "", $book_name = "", $client_email = "", $client_phone = "")
     {
         $this->client_name = $client_name;
         $this->book_name = $book_name;
