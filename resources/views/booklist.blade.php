@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $category_name }} <a href="{{ route('home') }}"><button class="btn btn-primary pull-right" style="margin-top: -7px">Go to Categories</button></a>
+                        {{ $category_name }} <a href="{{ route('home') }}"><button class="btn btn-primary pull-right" style="margin-top: -7px"><i class="fa fa-backward" aria-hidden="true"></i> Go to Categories</button></a>
                     </div>
 
                     <div class="panel-body">

@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Book Categories</div>
+                <div class="panel panel-default" >
+                    <div class="panel-heading"  style="background-color: #D9EDF7; color: #31708F"><i class="fa fa-book" aria-hidden="true" ></i> Book Categories</div>
 
                     <div class="panel-body">
                         <div class="flash-message">
@@ -18,12 +18,12 @@
 
                         <section class="wrapper">
                             <div class="container-fostrap">
-                                <div>
+                                {{--<div>--}}
                                     {{--<img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>--}}
-                                    <h1 class="heading">
-                                        Book Categories
-                                    </h1>
-                                </div>
+                                    {{--<h1 class="heading">--}}
+                                         {{--Book Categories--}}
+                                    {{--</h1>--}}
+                                {{--</div>--}}
                                 <div class="content">
                                     <div class="container">
 
@@ -31,7 +31,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/english.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">
@@ -52,7 +52,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/mathematics.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">
@@ -73,7 +73,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/administration.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">
@@ -100,7 +100,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/biology.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">
@@ -121,7 +121,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/electronics.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">
@@ -142,7 +142,7 @@
                                             <div class="col-sm-4">
                                                 <div class="card">
                                                     <a class="img-card" href="#">
-                                                        <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                        <img src="{{ asset('/images/physical.jpg') }}" />
                                                     </a>
                                                     <div class="card-content">
                                                         <h4 class="card-title">

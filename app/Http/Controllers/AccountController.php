@@ -3,80 +3,78 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
+use App\Payment;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+
 
 class AccountController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view("/myaccount");
+        $user = User::find(Auth::id())->get();
+        $payment = Payment::find(Auth::id());
+        $published_books = DB::table('books')->select('id', 'book_name')->where('user_id', Auth::id())->get();
+        $purchased_books = DB::table('payments')->join('books', 'payments.book_id' , '=', 'books.id')->select('books.*', 'payments.id')->where('payments.user_id', Auth::id())->get();
+
+        return view("/myaccount", ['user' => $user, 'published_books' => json_encode($published_books), 'purchased_books' => json_encode($purchased_books)]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        echo $request;
+        exit;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'email' => 'required|email|max:60',
+            'paypal_email' => 'required|email|max:60',
+            'phone' => 'required|max:15'
+        ]);
+
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->paypal_email = $request->paypal_email;
+        $user->phone = $request->phone;
+
+        $user->save();
+
+        $request->session()->flash('alert-success', 'User Account Updated');
+        return redirect('/account');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

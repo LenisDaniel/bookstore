@@ -28,6 +28,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sell', 'SellController@index')->name('sell');
 Route::get('/account', 'AccountController@index')->name('account');
+Route::post('/update_account/{id}', 'AccountController@update')->name('update_account');
 
 Route::get('booklist/{id}', 'CategoriesController@index')->name('categories');
 Route::get('bookdetails/{id}', 'BooksController@show')->name('bookdetails');
