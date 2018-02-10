@@ -39,12 +39,11 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 1]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>
@@ -60,12 +59,11 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 2]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>
@@ -81,12 +79,11 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 3]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>
@@ -108,12 +105,11 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 4]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>
@@ -129,12 +125,12 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
+
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 5]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>
@@ -150,12 +146,11 @@
                                                             </a>
                                                         </h4>
                                                         <p class="">
-                                                            Material Design is a visual programming language made by Google. Language programming...
                                                         </p>
                                                     </div>
                                                     <div class="card-read-more">
                                                         <a href="{{ route('categories',['id' => 6]) }}" class="btn btn-link btn-block">
-                                                            Ver Libros
+                                                            See Books
                                                         </a>
                                                     </div>
                                                 </div>

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        Model::unguard();
+
+        User::truncate();
+        Category::truncate();
+
+        factory(User::class, 1)->create();
+        $this->call(CategoriesSeeder::class);
+        Model::reguard();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
