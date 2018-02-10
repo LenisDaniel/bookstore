@@ -19,7 +19,7 @@ class CategoriesController extends Controller
 
         }else{
 
-            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.id')->select('books.*', 'categories.category_name')->where('books.category_id', $id)->where('books.user_id', '<>', Auth::id())->where('books.approved', 1)->get();
+            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.category_id')->select('books.*', 'categories.category_name')->where('books.category_id', $id)->where('books.user_id', '<>', Auth::id())->where('books.approved', 1)->get();
         }
 
         if(!$data->isEmpty()){
