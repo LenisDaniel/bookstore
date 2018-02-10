@@ -14,13 +14,16 @@ class CategoriesController extends Controller
     public function index(Request $request, $id)
     {
         if(Auth::user()->is_admin == 1){
-            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.id')->where('books.category_id', $id)->get();
+
+            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.category_id')->select('books.*', 'categories.category_name')->where('books.category_id', $id)->get();
+
         }else{
-            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.id')->where('books.category_id', $id)->where('books.user_id', '<>', Auth::id())->where('books.approved', 1)->get();
+
+            $data = DB::table('books')->join('categories', 'categories.id' , '=', 'books.id')->select('books.*', 'categories.category_name')->where('books.category_id', $id)->where('books.user_id', '<>', Auth::id())->where('books.approved', 1)->get();
         }
 
         if(!$data->isEmpty()){
-            return view('booklist', ['data' => json_encode($data), 'category_name' => $data[0]->category_descr]);
+            return view('booklist', ['data' => json_encode($data), 'category_name' => $data[0]->category_name]);
         }else{
             $request->session()->flash('alert-warning', 'This category has no books');
             return view('home');
