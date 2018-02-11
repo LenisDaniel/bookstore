@@ -16,14 +16,14 @@
                                     @endif
                                 @endforeach
                             </div>
-                            <form class="form-horizontal" method="POST" action="{{ route('update_account', ['id' => $user[0]->id]) }}">
+                            <form class="form-horizontal" method="POST" action="{{ route('update_account', ['id' => $user->id]) }}">
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="name" class="col-md-4 control-label">Name</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ $user[0]->name }}" required autofocus>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}" required autofocus>
                                         @if ($errors->has('name'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -36,7 +36,7 @@
                                     <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ $user[0]->email }}" required>
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" required>
                                         @if ($errors->has('email'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -47,7 +47,7 @@
                                 <div class="form-group{{ $errors->has('paypal_email') ? ' has-error' : '' }}">
                                     <label for="paypal_email" class="col-md-4 control-label">PayPal E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input id="paypal_email" type="email" class="form-control" name="paypal_email" value="{{ $user[0]->paypal_email }}">
+                                        <input id="paypal_email" type="email" class="form-control" name="paypal_email" value="{{ $user->paypal_email }}">
                                         @if ($errors->has('paypal_email'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('paypal_email') }}</strong>
@@ -59,7 +59,7 @@
                                     <label for="phone" class="col-md-4 control-label">Contact Phone</label>
 
                                     <div class="col-md-6">
-                                        <input id="phone" type="text" class="form-control" name="phone" value="{{ $user[0]->phone }}" required>
+                                        <input id="phone" type="text" class="form-control" name="phone" value="{{ $user->phone }}" required>
                                         @if ($errors->has('phone'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('phone') }}</strong>

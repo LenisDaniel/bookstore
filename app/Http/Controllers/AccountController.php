@@ -16,7 +16,8 @@ class AccountController extends Controller
 
     public function index()
     {
-        $user = User::find(Auth::id())->get();
+        $user = User::find(Auth::id());
+
         if(Auth::user()->is_admin == 1){
             $payment = Payment::find(Auth::id());
             $published_books = DB::table('books')->select('id', 'book_name')->get();
